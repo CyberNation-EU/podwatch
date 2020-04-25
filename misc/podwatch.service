@@ -1,0 +1,6 @@
+[Unit]
+Description=Podwatch updating service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/podwatch

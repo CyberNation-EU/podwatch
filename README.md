@@ -15,3 +15,46 @@ optional arguments:
   --dry-run    List only actions to be performed. Doesn't update images nor restarts containers.
   --debug, -d  Log additional debug information.
 ```
+
+
+#### Installation
+Since there are currently no distribution-specific packages available, podman must be installed manually
+
+##### 1) Clone repo
+```
+git clone https://github.com/CyberNation-EU/podwatch.git
+cd podwatch
+```
+
+##### 2) Copy podwatch
+```
+sudo cp podwatch.py /usr/bin/podwatch
+```
+
+##### 3) Configure systemd
+
+This solution uses a systemd timer to check for updates every day at 4:00am.
+
+###### a) Podman running as user
+
+```
+mkdir -p ~/.local/share/systemd/user/
+cp misc/podwatch.* ~/.local/share/systemd/user/
+systemctl --user daemon-reload
+systemctl --user enable io.podman.socket --now
+systemctl --user enable podwatch.timer --now
+```
+
+###### b) Podman running as root
+
+```
+cp misc/podwatch.* /usr/lib/systemd/user/
+systemctl daemon-reload
+systemctl enable io.podman.socket --now
+systemctl enable podwatch.timer --now
+```
+
+Podwatch should now be configured. Further information can be obtained with the following command.
+
+Show Timer information
+`systemctl [--user] list-timers`
