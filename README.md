@@ -1,5 +1,5 @@
 # podwatch ![](https://www.iconfinder.com/icons/44356/download/png/32)
-watches and updates pods in need 
+watches and updates containers in need.
 
 #### Description
 Utility which uses podman.socket to watch and update running containers.
@@ -19,6 +19,13 @@ optional arguments:
 
 #### Installation
 Since there are currently no distribution-specific packages available, podman must be installed manually
+
+##### Requirements
+
+Python-Podman (Python bindings for using Varlink access to Podman Service)
+
+`pip3 install podman` or `dnf install python-podman-api`
+
 
 ##### 1) Clone repo
 ```
