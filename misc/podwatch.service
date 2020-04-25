@@ -3,4 +3,5 @@ Description=Podwatch updating service
 
 [Service]
 Type=oneshot
+Environment=PYTHONUNBUFFERED=1
 ExecStart=/usr/bin/podwatch
