@@ -36,6 +36,7 @@ cd podwatch
 ##### 2) Copy podwatch
 ```
 sudo cp podwatch.py /usr/bin/podwatch
+chmod +x /usr/bin/podwatch
 ```
 
 ##### 3) Configure systemd
