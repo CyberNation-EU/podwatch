@@ -25,6 +25,7 @@ Since there are currently no distribution-specific packages available, podman mu
 Python-Podman (Python bindings for using Varlink access to Podman Service)
 
 `pip3 install podman` or `dnf install python-podman-api`
+
 `pip3 install varlink` or `dnf install python3-varlink`
 
 ##### 1) Clone repo
